@@ -1,20 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Fragment } from "react";
+import { StatusBar } from "expo-status-bar";
+
+import { ThemeProvider } from "styled-components";
+
+import theme from "./src/theme";
+import { Quiz } from "./src/domain/quiz";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <Fragment>
+      <ThemeProvider theme={theme}>
+        <Quiz />
+      </ThemeProvider>
       <StatusBar style="auto" />
-    </View>
+    </Fragment>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
